@@ -23,7 +23,7 @@
   },
   "api_example_data_003": {
     "name": "api-example-data-003",
-    "file_type": "json"
+    "file_type": "json",
     "file_from": "github",
     "file_edit_date": {
       "year": 0,
