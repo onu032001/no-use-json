@@ -1,0 +1,35 @@
+{
+  "api_example_data_001": {
+    "name": "api-example-data-001",
+    "file_type": "json",
+    "file_from": "github",
+    "file_edit_date": {
+      "year": 2026,
+      "month": 1,
+      "date": 6,
+      "hour": 12
+    }
+  },
+  "api_example_data_002": {
+    "name": "api-example-data-002",
+    "file_type": "json",
+    "file_from": "github",
+    "file_edit_date": {
+      "year": 0,
+      "month": 0,
+      "date": 0,
+      "hour": 0
+    }
+  },
+  "api_example_data_003": {
+    "name": "api-example-data-003",
+    "file_type": "json"
+    "file_from": "github",
+    "file_edit_date": {
+      "year": 0,
+      "month": 0,
+      "date": 0,
+      "hour": 0
+    }
+  }
+}
