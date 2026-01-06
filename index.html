@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-widhth, initial-scale=1.0">
+    <title>아무 쓸모도 없는 JSON</title>
+  </head>
+  <body>
+    <h1>아무 쓸모도 없는 JSON</h1>
+    <p>아무 쓸모도 없는 JSON</p>
+    <pre id="test"></pre>
+    <script src="./remove additional spaces.js"></script>
+    <script>
+      document.getElementById('test').innerHTML = removeAdditionalSpaces(`
+        {
+          "students": [
+            {
+              "name": "최성록",
+              "gender": "male",
+              "age": 18
+            },
+            {
+              "name": "박성혁",
+              "gender": "male",
+              "age": 18
+            },
+            {
+              "name": "김재연",
+              "gender": "female",
+              "age": 18
+            },
+            {
+              "name": "장재희",
+              "gender": "female",
+              "age": 18
+            }
+          ]
+        }
+      `);
+    </script>
+  </body>
+</html>
