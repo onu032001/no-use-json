@@ -1,0 +1,24 @@
+{
+  "students": [
+    {
+      "name": "최성록",
+      "gender": "male",
+      "age": 18
+    },
+    {
+      "name": "박성혁",
+      "gender": "male",
+      "age": 18
+    },
+    {
+      "name": "김재연",
+      "gender": "female",
+      "age": 18
+    },
+    {
+      "name": "장재희",
+      "gender": "female",
+      "age": 18
+    }
+  ]
+}
