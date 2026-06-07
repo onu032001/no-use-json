@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Editor</title>
+</head>
+<body>
+    <input id="fileInput" type="file"><br>
+    <canvas id="result" width="4096" height="4096"></canvas>
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        function group(list, amount) {
+            const result = [];
+            for (let index = 0; index < list.length; index += amount) {
+                const groupResult = [];
+                for (let groupIndex = index; groupIndex < index + amount; groupIndex++) {
+                    groupResult.push(list[groupIndex]);
+                }
+                result.push(groupResult);
+            }
+            return result;
+        }
+        
+        function offsetPush(pixels, cols, offset) {
+            const length = pixels.length;
+            const result = new Array(length);
+            for (let index = 0; index < length; index++) {
+                const pixel = pixels[index];
+                const amount = (Math.floor(index % cols / offset) + 1) * offset;
+                let result_index = index + amount * Math.floor(length / cols);
+                if (result_index >= length) {
+                    result_index -= length;
+                }
+                result[result_index] = pixel;
+            }
+            return result;
+        }
+
+        function inputHandler() {
+            const file = fileInput.files?.[0];
+            if (!file) return;
+            const url = URL.createObjectURL(file);
+            const image = new Image();
+            image.onload = () => {
+                ctx.drawImage(image, 0, 0);
+                image.style.display = 'none';
+                
+                setTimeout(() => {
+                    URL.revokeObjectURL(url);
+                }, 8000);
+            };
+            image.src = url;
+        }
+    </script>
+</body>
+</html>
