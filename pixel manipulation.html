@@ -10,7 +10,7 @@
     <canvas id="result" width="4096" height="4096"></canvas>
     <script>
         const fileInput = document.getElementById('fileInput');
-        const canvas = document.getElementById('canvas');
+        const canvas = document.getElementById('result');
         const ctx = canvas.getContext('2d');
 
         function group(list, amount) {
@@ -52,6 +52,7 @@
                 let data = imageData.data;
                 data = group(data, 4);
                 data = offsetPush(data, 4096, 8).flat();
+                ctx.putImageData(data, 0, 0);
                 setTimeout(() => {
                     URL.revokeObjectURL(url);
                 }, 8000);
